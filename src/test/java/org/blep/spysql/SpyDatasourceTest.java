@@ -3,9 +3,9 @@ package org.blep.spysql;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Before;
 import org.junit.Test;
-import org.fest.assertions.Assert.*;
 
 import static org.fest.assertions.Assertions.assertThat;
+import static org.blep.spysql.TestUtils.*;
 
 /**
  * @author blep
@@ -17,19 +17,18 @@ public class SpyDatasourceTest {
 
     @Before
     public void setUp() throws Exception {
-        final BasicDataSource basicDataSource = new BasicDataSource();
-        basicDataSource.setDriverClassName("org.h2.Driver");
-        basicDataSource.setUrl("jdbc:h2:mem:sample");
-        basicDataSource.setUsername("sa");
-        basicDataSource.setPassword("");
-
-        datasource = new SpyDatasource();
-        datasource.setDelegate(basicDataSource);
+        datasource =  buildSpyDatasource();
     }
+
+
 
     @Test
     public void should_create_datasource() throws Exception {
         assertThat(datasource).isNotNull();
+    }
 
+    @Test
+    public void should_create_a_spy_connection() throws Exception {
+        assertThat(datasource.getConnection()).isInstanceOf(SpyConnection.class);
     }
 }

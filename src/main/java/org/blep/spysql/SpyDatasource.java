@@ -3,6 +3,7 @@ package org.blep.spysql;
 import lombok.Delegate;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import net.jcip.annotations.NotThreadSafe;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -11,10 +12,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
+ * This datasource implementation must be exclusively used for testing purposes.
+ * Do not use for production.
+ *
  * @author blep
  *         Date: 07/12/13
  *         Time: 08:14
  */
+@NotThreadSafe
 public class SpyDatasource implements DataSource{
 
     private final Collection<SqlListener> listeners = new ArrayList<>();

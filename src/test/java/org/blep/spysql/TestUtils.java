@@ -10,6 +10,10 @@ import org.apache.commons.dbcp.BasicDataSource;
 
 public class TestUtils {
     public static final String SQL_INF_SCHEMA = "select * from  information_schema.users";
+    public static final String INSERT_TEST="insert into test(name) values ('bali balo')";
+    public static final String CREATE_TABLE_TEST = "create table if not exists test (id identity, name varchar(255))";
+    public static final String SELECT_TEST = "select * from test";
+
 
     public static SpyDatasource buildSpyDatasource() {
         final BasicDataSource basicDataSource = new BasicDataSource();

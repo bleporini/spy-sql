@@ -29,6 +29,11 @@ public class SpyDatasource implements DataSource{
         return this;
     }
 
+    public SpyDatasource removeListener(SqlListener listener) {
+        listeners.remove(listener);
+        return this;
+    }
+
     @Override
     public Connection getConnection() throws SQLException {
         return new SpyConnection(listeners,delegate.getConnection());

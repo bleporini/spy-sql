@@ -6,7 +6,7 @@
 
     <groupId>org.blep</groupId>
     <artifactId>spy-sql</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
 
     <contributors>
         <contributor>

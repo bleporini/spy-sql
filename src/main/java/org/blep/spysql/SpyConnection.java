@@ -3,6 +3,7 @@ package org.blep.spysql;
 import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.NonNull;
+import net.jcip.annotations.ThreadSafe;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,10 +13,9 @@ import java.util.Collection;
 
 /**
  * @author blep
- *         Date: 07/12/13
- *         Time: 08:31
  */
 @AllArgsConstructor
+@ThreadSafe
 public class SpyConnection implements Connection{
     @NonNull
     private final Collection<SqlListener> listeners;

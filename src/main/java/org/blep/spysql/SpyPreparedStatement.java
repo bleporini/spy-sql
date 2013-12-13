@@ -2,6 +2,7 @@ package org.blep.spysql;
 
 import lombok.Delegate;
 import lombok.NonNull;
+import net.jcip.annotations.NotThreadSafe;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,9 +11,8 @@ import java.util.Collection;
 
 /**
  * @author blep
- *         Date: 07/12/13
- *         Time: 09:58
  */
+@NotThreadSafe
 public class SpyPreparedStatement implements PreparedStatement{
 
     private final Collection<SqlListener> listeners;

@@ -1,28 +1,25 @@
 package org.blep.spysql;
 
 import lombok.Delegate;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import net.jcip.annotations.NotThreadSafe;
+import net.jcip.annotations.ThreadSafe;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * This datasource implementation must be exclusively used for testing purposes.
  * Do not use for production.
  *
  * @author blep
- *         Date: 07/12/13
- *         Time: 08:14
  */
-@NotThreadSafe
+@ThreadSafe
 public class SpyDatasource implements DataSource{
 
-    private final Collection<SqlListener> listeners = new ArrayList<>();
+    private final Collection<SqlListener> listeners = new CopyOnWriteArrayList<>();
 
     public SpyDatasource addListener(SqlListener listener) {
         listeners.add(listener);

@@ -3,6 +3,7 @@ package org.blep.spysql;
 import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.NonNull;
+import net.jcip.annotations.NotThreadSafe;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,13 +14,12 @@ import java.util.List;
 
 /**
  * @author blep
- *         Date: 07/12/13
- *         Time: 08:50
  */
 @AllArgsConstructor
+@NotThreadSafe
 public class SpyStatement implements Statement {
     @NonNull
-    private Collection<SqlListener> listeners;
+    private final Collection<SqlListener> listeners;
 
     private final List<String> batched = new ArrayList<>();
 

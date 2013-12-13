@@ -1,25 +1,27 @@
 package org.blep.spysql;
 
-import lombok.Getter;
-import net.jcip.annotations.NotThreadSafe;
+import net.jcip.annotations.ThreadSafe;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
  * User: blep
- * Date: 09/12/13
- * Time: 09:07
  */
-@NotThreadSafe
+@ThreadSafe
 public class SqlCounter implements SqlListener {
-    @Getter
-    private int count=0;
+    private final AtomicInteger count=new AtomicInteger(0);
 
     @Override
     public void queryExecuted(String sql) {
-        count++;
+        count.incrementAndGet();
+    }
+
+    public int getCount() {
+        return count.intValue();
     }
 
     public void reset(){
-        count = 0;
+        count.set(0);
     }
 }

@@ -21,4 +21,4 @@ Then you can register any implementation of the simple interface `org.blep.spysq
 spyDatasource.addListener(listener);
 ```
 
-If your datasource is shared accross multiple threads, beware of concurrency issues as listeners are shared as well. If you're just using it in a single treaded tests case, juste don't care about it.
+If your datasource is shared accross multiple threads, beware of concurrency issues as listeners are shared as well. If you're just using it in single treaded test cases, just don't care about it.

@@ -22,8 +22,7 @@ public class TestUtils {
         basicDataSource.setUsername("sa");
         basicDataSource.setPassword("");
 
-        final SpyDatasource spyDs = new SpyDatasource();
-        spyDs.setDelegate(basicDataSource);
+        final SpyDatasource spyDs = new SpyDatasource(basicDataSource);
         return spyDs;
     }
 }

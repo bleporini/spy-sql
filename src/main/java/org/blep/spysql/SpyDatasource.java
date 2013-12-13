@@ -1,6 +1,8 @@
 package org.blep.spysql;
 
 import lombok.Delegate;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import net.jcip.annotations.ThreadSafe;
 
@@ -16,6 +18,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *
  * @author blep
  */
+@RequiredArgsConstructor
 @ThreadSafe
 public class SpyDatasource implements DataSource{
 
@@ -46,7 +49,7 @@ public class SpyDatasource implements DataSource{
         Connection getConnection(String username, String password)        throws SQLException;
     }
 
-    @Setter
+    @NonNull
     @Delegate(excludes = Excludes.class)
     private DataSource delegate;
 

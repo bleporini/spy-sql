@@ -7,13 +7,38 @@
     <groupId>org.blep</groupId>
     <artifactId>spy-sql</artifactId>
     <version>0.2-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Spy SQL</name>
+    <description>A data source wrapper tha allows to get
+        information about JDBC activity</description>
+    <url>https://github.com/bleporini/spy-sql</url>
 
-    <contributors>
-        <contributor>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <scm>
+        <url>https://github.com/bleporini/spy-sql</url>
+        <connection>scm:git:git://github.com/bleporini/spy-sql.git</connection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>blep</id>
             <name>Brice LEPORINI</name>
             <email>bleporini@gmail.com</email>
-        </contributor>
-    </contributors>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <build>
         <plugins>
@@ -36,6 +61,31 @@
                     <encoding>utf-8</encoding>
                     <sourceDirectory>src/main/java</sourceDirectory>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

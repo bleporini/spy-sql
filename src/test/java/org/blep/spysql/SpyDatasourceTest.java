@@ -1,6 +1,5 @@
 package org.blep.spysql;
 
-import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,8 +18,8 @@ import static org.blep.spysql.TestUtils.*;
  *         Date: 08/12/13
  *         Time: 06:49
  */
-public class SpyDatasourceTest {
-    private SpyDatasource datasource;
+public class SpyDataSourceTest {
+    private SpyDataSource datasource;
 
     @Before
     public void setUp() throws Exception {
@@ -81,7 +80,7 @@ public class SpyDatasourceTest {
     }
 
     private Collection getPrivateListeners() throws NoSuchFieldException, IllegalAccessException {
-        final Field field = SpyDatasource.class.getDeclaredField("listeners");
+        final Field field = SpyDataSource.class.getDeclaredField("listeners");
         field.setAccessible(true);
         return (Collection) field.get(datasource);
     }

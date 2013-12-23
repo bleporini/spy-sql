@@ -12,7 +12,7 @@ import static org.fest.assertions.Assertions.assertThat;
 
 public class SpyPreparedStatementTest {
 
-    private SpyDatasource ds;
+    private SpyDataSource ds;
     private Connection conn;
 
     @Before

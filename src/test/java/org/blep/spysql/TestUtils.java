@@ -15,14 +15,14 @@ public class TestUtils {
     public static final String SELECT_TEST = "select * from test";
 
 
-    public static SpyDatasource buildSpyDatasource() {
+    public static SpyDataSource buildSpyDatasource() {
         final BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName("org.h2.Driver");
         basicDataSource.setUrl("jdbc:h2:mem:sample");
         basicDataSource.setUsername("sa");
         basicDataSource.setPassword("");
 
-        final SpyDatasource spyDs = new SpyDatasource(basicDataSource);
+        final SpyDataSource spyDs = new SpyDataSource(basicDataSource);
         return spyDs;
     }
 }

@@ -1,7 +1,6 @@
 package org.blep.spysql;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +17,6 @@ import static org.junit.Assert.fail;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 /**
  * User: blep
@@ -28,7 +26,7 @@ import static org.mockito.Mockito.when;
 
 public class SpyStatementTest {
 
-    private SpyDatasource ds;
+    private SpyDataSource ds;
     private Connection conn;
 
     @Before

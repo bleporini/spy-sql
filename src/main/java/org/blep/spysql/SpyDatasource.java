@@ -3,7 +3,6 @@ package org.blep.spysql;
 import lombok.Delegate;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import net.jcip.annotations.ThreadSafe;
 
 import javax.sql.DataSource;
@@ -20,16 +19,16 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 @RequiredArgsConstructor
 @ThreadSafe
-public class SpyDatasource implements DataSource{
+public class SpyDataSource implements DataSource{
 
     private final Collection<SqlListener> listeners = new CopyOnWriteArrayList<>();
 
-    public SpyDatasource addListener(SqlListener listener) {
+    public SpyDataSource addListener(SqlListener listener) {
         listeners.add(listener);
         return this;
     }
 
-    public SpyDatasource removeListener(SqlListener listener) {
+    public SpyDataSource removeListener(SqlListener listener) {
         listeners.remove(listener);
         return this;
     }

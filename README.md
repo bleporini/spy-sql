@@ -15,7 +15,7 @@ Suppose you're using `commons-dbcp`, just create a new `SpyDatasource` with the 
 
 Obviously, it can be used with `Spring` or any other DI framework.
 
-Then you can register any implementation of the simple interface `org.blep.spysql.SqlListener`, `org.blep.spysql.SqlCounter` which is provided or your own:
+Then you can register any implementation of the simple interface `io.blep.spysql.SqlListener`, `io.blep.spysql.SqlCounter` which is provided or your own:
 
 ```java
 spyDatasource.addListener(listener);

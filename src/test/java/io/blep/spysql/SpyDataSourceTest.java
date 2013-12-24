@@ -1,4 +1,4 @@
-package org.blep.spysql;
+package io.blep.spysql;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import static java.lang.Runtime.getRuntime;
 import static java.util.concurrent.Executors.newFixedThreadPool;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.fest.assertions.Assertions.assertThat;
-import static org.blep.spysql.TestUtils.*;
+import static io.blep.spysql.TestUtils.*;
 
 /**
  * @author blep

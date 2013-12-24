@@ -1,4 +1,4 @@
-package org.blep.spysql;
+package io.blep.spysql;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
-import static org.blep.spysql.TestUtils.*;
+import static io.blep.spysql.TestUtils.*;
 import static org.fest.assertions.Assertions.assertThat;
 
 public class SpyPreparedStatementTest {

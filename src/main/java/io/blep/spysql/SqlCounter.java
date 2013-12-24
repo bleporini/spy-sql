@@ -1,4 +1,4 @@
-package org.blep.spysql;
+package io.blep.spysql;
 
 import net.jcip.annotations.ThreadSafe;
 

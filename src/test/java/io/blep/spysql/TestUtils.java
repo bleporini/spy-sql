@@ -1,4 +1,4 @@
-package org.blep.spysql;
+package io.blep.spysql;
 
 import org.apache.commons.dbcp.BasicDataSource;
 

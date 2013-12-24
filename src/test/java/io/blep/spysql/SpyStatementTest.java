@@ -1,11 +1,11 @@
-package org.blep.spysql;
+package io.blep.spysql;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
-import static org.blep.spysql.TestUtils.*;
+import static io.blep.spysql.TestUtils.*;
 import static org.fest.assertions.Assertions.assertThat;
 
 import java.sql.Connection;

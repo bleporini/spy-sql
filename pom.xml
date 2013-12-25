@@ -21,8 +21,8 @@
 
     <scm>
         <url>https://github.com/bleporini/spy-sql</url>
-        <connection>scm:git:git://github.com/bleporini/spy-sql.git</connection>
-        <developerConnection>scm:git:git://github.com/bleporini/spy-sql.git</developerConnection>
+        <connection>scm:git:https://github.com/bleporini/spy-sql.git</connection>
+        <developerConnection>scm:git:https://github.com/bleporini/spy-sql.git</developerConnection>
     </scm>
 
     <developers>

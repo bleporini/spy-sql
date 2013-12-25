@@ -4,7 +4,7 @@
 
     <groupId>io.blep</groupId>
     <artifactId>spy-sql</artifactId>
-    <version>0.2</version>
+    <version>0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Spy SQL</name>
     <description>A data source wrapper tha allows to get

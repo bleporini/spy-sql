@@ -21,7 +21,7 @@ public class SpyStatement implements Statement {
     @NonNull
     private final Collection<SqlListener> listeners;
 
-    private final List<String> batched = new ArrayList<>();
+    private final List<String> batched = new ArrayList<String>();
 
     @NonNull
     @Delegate(excludes = Exclude.class)

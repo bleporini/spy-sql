@@ -21,7 +21,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @ThreadSafe
 public class SpyDataSource implements DataSource{
 
-    private final Collection<SqlListener> listeners = new CopyOnWriteArrayList<>();
+    private final Collection<SqlListener> listeners = new CopyOnWriteArrayList<SqlListener>();
 
     public SpyDataSource addListener(SqlListener listener) {
         listeners.add(listener);
